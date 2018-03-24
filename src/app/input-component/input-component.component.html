@@ -1,0 +1,4 @@
+<h2>{{ header}}</h2>
+<input  #name type="text" [ngModel]="item.name"> {{ item | json }}
+<button *ngIf="!isEditxw" type="button" (click)="onClick(name.value)">Add</button>
+<button *ngIf="isEdit" type="button" (click)="onUpdate()">Update</button>
