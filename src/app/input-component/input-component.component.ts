@@ -17,25 +17,21 @@ export class InputComponentComponent implements OnInit {
 
   @Output() param = new EventEmitter();
   @Input() item;
-
+  @Output() edit = new EventEmitter();
   ngOnInit() {
   }
 
-  onUpdate() {
-    this.listofTable[this.index] = this.input;
-    this.input = "";
-    this.isEdit = false;
-  }
-  onClick(name) {
-    // this.listofTable.push(this.input);
-    // this.input = '';
+  onUpdate(name) {
     console.log(name)
     this.item.name = name;
+    this.edit.emit(this.item);
+    this.item = new Employee();
+  }
+  onClick(id,name) {
+    this.item.name = name;
+    this.item.id = id;
     this.param.emit(this.item);
     this.item = new Employee();
-    // console.log(this.item)
-    // this.param.emit(this.item);
-    // this.input = '';
   }
 
   onDelete(item, index) {

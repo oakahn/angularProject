@@ -32,5 +32,7 @@ export class AppComponent implements OnInit {
     console.log(data)
     this.list.splice(data)
   }
-
+  onUpdate(data){
+    console.log(data);
+  }
 }
