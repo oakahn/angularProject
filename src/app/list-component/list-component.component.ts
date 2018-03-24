@@ -19,6 +19,7 @@ export class ListComponentComponent implements OnInit {
     this.callServiceService.deleteData(item);
   }
   onEdit(item,i){
+    
     this.param.emit({ item,i})
   }
 }

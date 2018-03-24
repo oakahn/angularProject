@@ -9,6 +9,7 @@ import { Employee } from './employee';
 })
 export class AppComponent implements OnInit {
   title = 'app';
+  isEdit ;
   list:Employee[];
   tmp: Employee = new Employee();
   constructor(private callservice: CallServiceService){
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit {
   onEdit(data){
     console.log(data)
     this.tmp = data.item;
+    this.isEdit = true;
   }
   onDelete(data){
     console.log(data)

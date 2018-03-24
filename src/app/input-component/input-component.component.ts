@@ -11,13 +11,13 @@ export class InputComponentComponent implements OnInit {
   input: string;
   showMeInput: string;
   listofTable = [];
-  isEdit = false;
   index: number;
   constructor() { }
 
   @Output() param = new EventEmitter();
   @Input() item;
   @Output() edit = new EventEmitter();
+  @Input() isEdit = false;
   ngOnInit() {
   }
 
@@ -26,6 +26,7 @@ export class InputComponentComponent implements OnInit {
     this.item.name = name;
     this.edit.emit(this.item);
     this.item = new Employee();
+    this.isEdit = false;
   }
   onClick(id,name) {
     this.item.name = name;
